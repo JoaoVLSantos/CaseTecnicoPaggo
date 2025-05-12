@@ -85,7 +85,7 @@ npm run start:dev
 
 A API estará disponível em: `http://localhost:3000`
 
-## 💻 Frontend – Next.js + Tailwind
+## 💻 Frontend – Next.js
 
 ### 📦 Instalar dependências
 
