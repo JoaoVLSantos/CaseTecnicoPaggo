@@ -20,8 +20,8 @@ Construir um sistema fullstack que permita:
 
 ## 🔗 Acesso à aplicação
 
-- 🔐 **Backend (API NestJS)**: [`https://paggo-backend-700c.onrender.com/api/status`](https://paggo-backend-700c.onrender.com/api/status)
-- 🖥️ **Frontend (Next.js)**: [`https://paggo-frontend-ps59.onrender.com`](https://paggo-frontend-ps59.onrender.com)
+- 🔐 **Backend (API NestJS)**: [`https://paggo-backend-wcye.onrender.com/api/status`](https://paggo-backend-wcye.onrender.com/api/status)
+- 🖥️ **Frontend (Next.js)**: [`https://paggo-frontend-5ejm.onrender.com`](https://paggo-frontend-5ejm.onrender.com)
 
 > ℹ️ **Observação:** A API pode estar em estado de suspensão devido ao uso do plano gratuito da Render. Isso pode causar um pequeno atraso no primeiro carregamento. Mantenha a página aberta ou interaja com o sistema para evitar a suspensão automática.
 
