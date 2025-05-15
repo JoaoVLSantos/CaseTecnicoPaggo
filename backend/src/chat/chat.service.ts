@@ -1,5 +1,3 @@
-// src/chat/chat.service.ts
-
 import {
   Injectable,
   NotFoundException,

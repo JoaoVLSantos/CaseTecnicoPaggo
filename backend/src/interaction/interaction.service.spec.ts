@@ -89,7 +89,7 @@ describe('InteractionService', () => {
 
   describe('remove', () => {
     it('should delete an interaction and return success message', async () => {
-      // Arrange
+
       prismaMock.interaction.findUnique.mockResolvedValue({
         id: 'i5',
         chatId: 'chat-1',
@@ -97,10 +97,9 @@ describe('InteractionService', () => {
       prismaMock.chat.findUnique.mockResolvedValue({ id: 'chat-1', userId: 'u1' })
       prismaMock.interaction.delete.mockResolvedValue({})
 
-      // Act
+
       const result = await service.remove('u1', 'i5')
 
-      // Assert: agora esperamos o select no findUnique
       expect(prismaMock.interaction.findUnique).toHaveBeenCalledWith({
         where: { id: 'i5' },
         select: { chatId: true },

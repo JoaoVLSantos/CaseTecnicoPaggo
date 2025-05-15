@@ -2,7 +2,7 @@ import { Injectable, NotFoundException, BadRequestException } from '@nestjs/comm
 import { PrismaService } from 'src/prisma/prisma.service'
 
 export type ChatInteraction = {
-  id: string           // permanece string UUID
+  id: string          
   sender: 'user' | 'ai'
   content: string
   createdAt: Date

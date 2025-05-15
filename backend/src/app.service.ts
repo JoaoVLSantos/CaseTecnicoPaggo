@@ -1,5 +1,3 @@
-// src/app.service.ts
-
 import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { PrismaService } from 'src/prisma/prisma.service';
@@ -34,7 +32,7 @@ export class AppService {
       dbConnection = false;
     }
 
-    // 2) OpenAI health (lista modelos, custa ZERO tokens)
+    // 2) OpenAI health
     let openAi = true;
     try {
       await this.openaiClient.models.list();

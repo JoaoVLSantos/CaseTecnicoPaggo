@@ -1,4 +1,3 @@
-// src/chat/chat.controller.ts
 import {
   BadRequestException,
   Controller,
@@ -87,7 +86,7 @@ export class ChatController {
   ) {
     const userId = req.user.userId
     const pdfBytes = await this.chatPdfService.generateChatPdf(chatId, userId)
-    // Ajusta headers para download
+
     res
       .set({
         'Content-Type': 'application/pdf',

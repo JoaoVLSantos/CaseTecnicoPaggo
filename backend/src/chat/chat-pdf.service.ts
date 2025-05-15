@@ -1,4 +1,3 @@
-// src/chat/chat-pdf.service.ts
 import {
   Injectable,
   NotFoundException,
