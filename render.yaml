@@ -9,13 +9,14 @@ services:
     branch: main
     runtime: node
 
-    # build & start inside `backend/`
     buildCommand: |
       cd backend
       npm install --legacy-peer-deps
       npm run build
+
     startCommand: |
       cd backend
+      npx prisma migrate deploy
       npm run start:prod
 
     envVars:
@@ -38,11 +39,11 @@ services:
     branch: main
     runtime: node
 
-    # build & start inside `frontend/`
     buildCommand: |
       cd frontend
       npm install --legacy-peer-deps
       npm run build
+
     startCommand: |
       cd frontend
       npm run start
@@ -50,7 +51,6 @@ services:
     envVars:
       - key: NEXT_PUBLIC_API_URL
         value: "https://paggo-backend-700c.onrender.com/api"
-
 
 # ─── Managed Postgres Database ────────────────────────────────────────
 databases:
