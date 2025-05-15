@@ -29,7 +29,6 @@ export default function SignInForm() {
       const { access_token } = await res.json()
       localStorage.setItem('access_token', access_token)
 
-      // redireciona diretamente para a página de chats
       await router.push('/chats')
     } catch (err: any) {
       setError(err.message)

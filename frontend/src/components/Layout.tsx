@@ -34,7 +34,7 @@ export const Layout: FC<Props> = ({
   const [email, setEmail] = useState(user.email)
   const [password, setPassword] = useState('')
   const [busy, setBusy] = useState(false)
-  // Sempre que o usuário vier de fora, resetamos os campos
+
   useEffect(() => {
     setName(user.name)
     setEmail(user.email)
@@ -42,7 +42,7 @@ export const Layout: FC<Props> = ({
 
   const toggleCard = () => {
     if (showCard) {
-      // ao fechar, sai do modo edição e reseta
+
       setEditing(false)
       setName(user.name)
       setEmail(user.email)
@@ -61,12 +61,12 @@ export const Layout: FC<Props> = ({
     )
     try {
       await Promise.all([update, delay])
-      // fechar após update
+
       setEditing(false)
       setShowCard(false)
       setPassword('')
     } catch {
-      // você pode querer tratar erro aqui (exibir toast, etc)
+
     } finally {
       setBusy(false)
     }

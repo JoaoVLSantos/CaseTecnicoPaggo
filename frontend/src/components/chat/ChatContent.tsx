@@ -1,10 +1,9 @@
-// components/chat/ChatContent.tsx
 import { FC, useEffect, useState, FormEvent, useRef } from 'react'
 import { FiArrowRight } from 'react-icons/fi'
 
 interface Interaction {
   id: string
-  question: string  // vazia se for o resumo inicial
+  question: string  
   answer: string
   createdAt: string
 }
@@ -26,12 +25,10 @@ export const ChatContent: FC<Props> = ({ chatId }) => {
   const base = process.env.NEXT_PUBLIC_API_URL || ''
   const responsesRef = useRef<HTMLDivElement>(null)
 
-  // Carrega o chat sempre que o chatId muda
   useEffect(() => {
     loadChat()
   }, [chatId])
 
-  // Função que faz fetch do chat completo, com interactions
   const loadChat = async () => {
     setLoading(true)
     setError(null)
@@ -43,7 +40,7 @@ export const ChatContent: FC<Props> = ({ chatId }) => {
       const data = await res.json()
       if (!res.ok) throw new Error(data.message || 'Falha ao buscar chat')
       setChat(data)
-      // rolar para o fim das mensagens
+
       setTimeout(() => {
         responsesRef.current?.scrollTo({
           top: responsesRef.current.scrollHeight,
@@ -57,7 +54,6 @@ export const ChatContent: FC<Props> = ({ chatId }) => {
     }
   }
 
-  // Envia uma nova pergunta e recarrega o chat
   const handleSend = async (e: FormEvent) => {
     e.preventDefault()
     if (!message.trim()) return
@@ -89,15 +85,14 @@ export const ChatContent: FC<Props> = ({ chatId }) => {
   if (error   && !chat) return <p className="error">{error}</p>
   if (!chat)            return null
 
-  // Constrói a lista de mensagens a partir de interactions
   const items: { sender: 'ai' | 'user'; content: string }[] = []
 
   chat.interactions.forEach((intr, idx) => {
-    // se question estiver preenchido, renderiza bubble do usuário
+
     if (intr.question) {
       items.push({ sender: 'user', content: intr.question })
     }
-    // sempre renderiza a resposta da IA (ou o resumo inicial)
+
     items.push({ sender: 'ai', content: intr.answer })
   })
 

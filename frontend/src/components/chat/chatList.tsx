@@ -1,4 +1,3 @@
-// components/chat/chatList.tsx
 import { FC } from 'react'
 import { FiPlus, FiPrinter } from 'react-icons/fi'
 

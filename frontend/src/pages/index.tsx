@@ -1,4 +1,3 @@
-// pages/index.tsx
 import Head from 'next/head'
 import { useState } from 'react'
 import { Geist, Geist_Mono } from 'next/font/google'

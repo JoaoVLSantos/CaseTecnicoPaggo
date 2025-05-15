@@ -1,4 +1,3 @@
-// components/chat/ChatUpload.tsx
 import { FC, useState } from 'react'
 import { FiUpload } from 'react-icons/fi'
 import { Chat } from './chatList'
