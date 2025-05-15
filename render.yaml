@@ -43,7 +43,7 @@ services:
 
     envVars:
       - key: NEXT_PUBLIC_API_URL
-        value: "https://paggo-backend-wcye.onrender.com/api"
+        value: "https://paggo-backend-ke0w.onrender.com/api"
 
 # ─── Managed Postgres Database ────────────────────────────────────────
 databases:
