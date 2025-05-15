@@ -15,8 +15,9 @@ services:
       npm run build
 
     startCommand: |
-      cd backend
-      npx prisma migrate deploy
+      cd backend && \
+      npx prisma generate && \
+      npx prisma migrate deploy && \
       npm run start:prod
 
     envVars:
