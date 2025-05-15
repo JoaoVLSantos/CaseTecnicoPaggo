@@ -10,15 +10,10 @@ services:
     runtime: node
 
     buildCommand: |
-      cd backend
-      npm install --legacy-peer-deps
-      npm run build
+      cd backend && npm install --legacy-peer-deps && npm run build
 
     startCommand: |
-      cd backend && \
-      npx prisma generate && \
-      npx prisma migrate deploy && \
-      npm run start:prod
+      cd backend && npx prisma generate && npx prisma migrate deploy && npm run start:prod
 
     envVars:
       - key: DATABASE_URL
@@ -41,13 +36,10 @@ services:
     runtime: node
 
     buildCommand: |
-      cd frontend
-      npm install --legacy-peer-deps
-      npm run build
+      cd frontend && npm install --legacy-peer-deps && npm run build
 
     startCommand: |
-      cd frontend
-      npm run start
+      cd frontend && npm run start
 
     envVars:
       - key: NEXT_PUBLIC_API_URL
@@ -58,3 +50,4 @@ databases:
   - name: paggo-db
     region: oregon
     plan: free
+
